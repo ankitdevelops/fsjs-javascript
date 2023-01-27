@@ -6,29 +6,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All JavaScript Assignment</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+      :root {
+        --white: #ffffff;
+        --lightGray: #d6e2f0;
+        --grayishBlue: #7b879d;
+        --darkBlue: #1f3251;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
       body {
-        background-color: #242b2e;
-        height: 100vh;
-        overflow: hidden;
-        color: #fff;
+        background-color: var(--lightGray);
+        font-family: "Outfit", sans-serif;
+        font-size: 16px;
       }
-      li {
-        margin-bottom: 1.5rem;
+
+      .main-heading {
+        text-align: center;
+        margin: 1rem 0;
+        color: var(--darkBlue);
       }
-      a {
-        color: #fff;
-        font-size: 1.5rem;
+      .box-container {
+        background-color: var(--white);
+        width: 18.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      .info-container {
+        padding: 0.5rem 1rem;
+        text-align: center;
+      }
+      .info-container h3 {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--darkBlue);
+      }
+
+      .info-container p {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--grayishBlue);
       }
     </style>
   </head>
   <body>
-    <ul>
-      <li><a href="">30 Question Assignment</a></li>
-      <li>
-        <a href="./assignment-js/21-Jan/index.html"
-          >DOM Assignment 1 (circle generator)</a
-        >
-      </li>
-    </ul>
+    <h1 class="main-heading">All JavaScript Assignment</h1>
+    <main class="container">
+      <div class="box-container">
+        <div class="info-container">
+          <h3>All JavaScript Blog Links</h3>
+          <p>
+            <a href="">Github Link</a>
+          </p>
+          <p>
+            <a href="">Live Link</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="box-container">
+        <div class="info-container">
+          <h3>30 Questions</h3>
+          <p>
+            <a
+              href="https://github.com/ankitdevelops/fsjs-javascript/tree/main/assignment-js/08-Jan"
+              target="_blank"
+              >Github Link</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="box-container">
+        <div class="info-container">
+          <h3>Random Circle</h3>
+
+          <p>
+            <a
+              href="https://github.com/ankitdevelops/fsjs-javascript/tree/main/assignment-js/21-Jan"
+              target="_blank"
+              >Github Link</a
+            >
+          </p>
+          <p>
+            <a href="./assignment-js/21-Jan/index.html">Live Link</a>
+          </p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
