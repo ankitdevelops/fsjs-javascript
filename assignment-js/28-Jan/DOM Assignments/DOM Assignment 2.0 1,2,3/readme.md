@@ -1,3 +1,4 @@
+## DOM Assignment 1
 ### Task 1
 ![](firstAssignmentImage/task1Output.png)
 ```javascript
@@ -65,3 +66,32 @@ let btnElement = document.createElement("button");
 btnElement.innerText = "Support Me";
 btnDivElement.appendChild(btnElement);
 ```
+## DOM Assignment 02
+### Task 1
+*change background color of accordion heading and paragraph*
+
+![](secondAssignmentImage/task1Output.png)
+```javascript
+
+let accordion = document.querySelectorAll(".accordian h3");
+accordion.forEach((element) => {
+  element.addEventListener("click", () => {
+    let para = element.nextElementSibling;
+
+    // change accordion paragraph background color
+    para.style.backgroundColor = "#ececfe";
+
+    if (para.style.display === "block") {
+      para.style.display = "none";
+    } else {
+      para.style.display = "block";
+    }
+  });
+  // change accordion heading background color
+  element.style.backgroundColor = "#d6d6f6";
+});
+```
+### Task 2
+*Adding new accordion*
+
+![](secondAssignmentImage/task2Output.png)
