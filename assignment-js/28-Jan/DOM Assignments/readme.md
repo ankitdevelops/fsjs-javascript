@@ -193,3 +193,34 @@ for (i = 0; i < clashLevel.length; i++) {
   }
 }
 ```
+
+## DOM Assignment 05
+*Add pro subscription button in navbar and add a new recipe card*
+
+![](05_DOM%20Project/05_DOM%20Project/Output/DOM%20P2%20SS.png)
+
+```javascript
+// adding pro subscription button
+const navLink = document.querySelector(".nav-links").nextElementSibling;
+const subscriptionBtn = document.createElement("a");
+subscriptionBtn.innerText = "Pro Subscription";
+subscriptionBtn.classList.add("btn");
+subscriptionBtn.href = "./index.html";
+navLink.appendChild(subscriptionBtn);
+
+// adding 6th card
+function createCard(title, imageLink, prepTime, cookTime) {
+  const card = document.createElement("div");
+  const gallery = document.querySelector(".recipe-gallery");
+  card.classList.add("card");
+  card.innerHTML = `
+      <a href="#" class="recipe-text">
+        <img src="${imageLink}" class="recipe-img" />
+        <h5 class="recipe-name">${title}</h5>
+        <p class="recipe-disp">Prep : ${prepTime}min | Cook : ${cookTime}min</p>
+      </a>
+      `;
+  gallery.appendChild(card);
+}
+createCard("New Recipe", "./img/recipe-1.jpeg", "20", "40");
+```
