@@ -5,5 +5,6 @@ _Repository for learning JavaScript_
 - [Blogs](https://ankitdevelops.hashnode.dev/)
 - 08 Jan 30 Questions [Github](https://github.com/ankitdevelops/fsjs-javascript/tree/main/assignment-js/08-Jan)
 - 21 Jan Random Circle [Github](https://github.com/ankitdevelops/fsjs-javascript/tree/main/assignment-js/21-Jan) [Live](https://transcendent-biscotti-85085d.netlify.app/assignment-js/21-jan/)
+- 28 Jan All Dom Assignment [Github](https://github.com/ankitdevelops/fsjs-javascript/tree/main/assignment-js/28-Jan/DOM%20Assignments)
 
 ### [Live Site](https://transcendent-biscotti-85085d.netlify.app/)
