@@ -126,3 +126,42 @@ accordion.forEach((element) => {
   element.style.backgroundColor = "#d6d6f6";
 });
 ```
+## DOM Assignment 03
+### Task 01
+![](thirdAssignmentImage/task1Output.png)
+```javascript
+// grabbing the buttons
+const submitBtn = document.querySelector(".mainRight form button");
+const resetBtn = document.querySelector(".mainLeft form button");
+
+// function to take input from user input board
+function onSubmit() {
+  event.preventDefault();
+  const username = document.querySelector(".userName");
+  const email = document.querySelector(".userEmail");
+  const message = document.querySelector(".userMessage");
+
+  userOutput(username.value, email.value, message.value);
+
+  username.value = "";
+  email.value = "";
+  message.value = "";
+}
+
+// function to display the output in user Output board
+function userOutput(username, email, message) {
+  document.querySelector(".enterName").value = username;
+  document.querySelector(".enterMail").value = email;
+  document.querySelector(".enterMessage").value = message;
+}
+
+// function to reset the user output board
+function reset() {
+  document.querySelector(".enterName").value = "";
+  document.querySelector(".enterMail").value = "";
+  document.querySelector(".enterMessage").value = "";
+}
+// adding event listener to button
+submitBtn.addEventListener("click", onSubmit);
+resetBtn.addEventListener("click", reset);
+```
