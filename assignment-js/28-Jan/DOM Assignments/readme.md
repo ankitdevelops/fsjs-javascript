@@ -325,6 +325,25 @@ navbarButton.addEventListener("click", () => {
   //     navbarCollapse.style.display = "none";
   //   }
 });
-
-
 ```
+
+## DOM Assignment 09
+
+### Task 01
+![](DOM%20P9/DOM%20P9/ass9.1-after.png)
+
+```javascript
+document.querySelector(".caption .title").style.color = "#d51139";
+```
+
+### Task 02
+![](DOM%20P9/DOM%20P9/ass9.2-after.png)
+
+```javascript
+const button = document.querySelector(".add-to-cart");
+console.log(button);
+button.addEventListener("mouseover", () => {
+  button.style.backgroundColor = "#d61139";
+});
+```
+
