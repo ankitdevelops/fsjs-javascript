@@ -275,3 +275,56 @@ inputForm.removeAttribute("disabled");
 inputForm.value = "ineuron";
 submitButton.removeAttribute("disabled");
 ```
+
+## DOM Assignment 06
+
+### Task 01
+
+![](DOM%20P8/DOM%20P8/ass8.1-after.png)
+
+```javascript
+const aside = document.querySelector("aside");
+aside.addEventListener("mouseover", () => {
+  aside.style.transform = "scale(1.1)";
+  aside.style.transition = "ease-in-out .5s";
+});
+aside.addEventListener("mouseleave", () => {
+  aside.style.transform = "scale(1)";
+  aside.style.transition = "ease-in-out .5s";
+});
+```
+
+### Task 02
+![](DOM%20P8/DOM%20P8/ass8.2-after.png)
+
+```javascript
+const documentBody = document.querySelector("body");
+documentBody.style.backgroundImage = "none";
+```
+
+### Task 03
+![](DOM%20P8/DOM%20P8/ass8.3-after.png)
+
+```javascript
+const navbarButton = document.querySelector(".navbar-toggler");
+const navbarCollapse = document.querySelector(".navbar-collapse");
+navbarButton.addEventListener("click", () => {
+  
+  // method 1
+  if (navbarCollapse.classList.contains("collapse")) {
+    navbarCollapse.classList.remove("collapse");
+  } else {
+    navbarCollapse.classList.add("collapse");
+  }
+
+  //   method 2
+
+  //   if (navbarCollapse.style.display == "none") {
+  //     navbarCollapse.style.display = "block";
+  //   } else {
+  //     navbarCollapse.style.display = "none";
+  //   }
+});
+
+
+```
