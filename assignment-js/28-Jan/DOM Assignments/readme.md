@@ -224,3 +224,24 @@ function createCard(title, imageLink, prepTime, cookTime) {
 }
 createCard("New Recipe", "./img/recipe-1.jpeg", "20", "40");
 ```
+
+
+## DOM Assignment 06
+*Change logo and price*
+### Task 01
+![](06_DOM%20Project/06_DOM%20Project/Output/DOM%20P3%20SS-1.png)
+
+```javascript
+// changing the logo
+const logo = document.querySelector(".logo");
+logo.src = "./assets/ineuron-logo.png";
+```
+
+### Task 02
+![](06_DOM%20Project/06_DOM%20Project/Output/DOM%20P3%20SS-2.png)
+
+```javascript
+// changing the price
+const appPrice = document.querySelector(".app_price span");
+appPrice.innerText = "$10";
+```
