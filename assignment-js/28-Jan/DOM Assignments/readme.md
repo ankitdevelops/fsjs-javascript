@@ -245,3 +245,33 @@ logo.src = "./assets/ineuron-logo.png";
 const appPrice = document.querySelector(".app_price span");
 appPrice.innerText = "$10";
 ```
+
+## DOM Assignment 07
+### Task 01
+*Remove the languages that have 2.0 in their name(Every alternative language)*
+
+![](DOM%20P7/DOM%20P7/ass7.1-after.png)
+
+```javascript
+const links = document.querySelectorAll(".main__languages a");
+for (let i = 0; i < links.length; i++) {
+  const element = links[i];
+  if (element.innerText.includes(2.0)) {
+    document.querySelector(".main__languages").removeChild(element);
+  }
+}
+```
+
+### Task 01
+*Remove the languages that have 2.0 in their name(Every alternative language)*
+
+![](DOM%20P7/DOM%20P7/ass7.2-after.png)
+
+```javascript
+const inputForm = document.querySelector(".main__form-input");
+const submitButton = document.querySelector(".main__form-btn");
+
+inputForm.removeAttribute("disabled");
+inputForm.value = "ineuron";
+submitButton.removeAttribute("disabled");
+```
