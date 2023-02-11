@@ -4,21 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Weather API</title>
   </head>
-  <body class="bg-slate-800">
+  <body class="bg-slate-800" onload="getData(event)">
     <main class="h-screen">
       <div class="h-full container mx-auto flex justify-center items-center">
         <div
-          class="card bg-white rounded-lg p-16 flex justify-evenly items-center flex-col h-[600px] max-w-sm"
+          class="card bg-white rounded-lg p-16 flex justify-evenly items-center flex-col h-[600px] max-w-sm w-10/12 bg-[url('https://images.pexels.com/photos/2310641/pexels-photo-2310641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat brightness-25"
+          id="card"
         >
           <div class="user__interaction flex justify-center p-10">
             <form onsubmit="getData(event)" class="flex gap-4">
               <input
                 id="userInput"
-                placeholder="Your City"
-                class="h-full p-2 focus:outline-none border-b-2"
+                placeholder="Your City..."
+                class="h-full p-2 focus:outline-none border-b-2 rounded"
                 u
               />
               <button class="bg-slate-800 text-white py-2 px-4 rounded">
@@ -26,95 +28,9 @@
               </button>
             </form>
           </div>
-          <div class="wether_condition flex gap-10 items-center">
-            <div class="condition__img">
-              <img
-                src="//cdn.weatherapi.com/weather/128x128/day/122.png"
-                alt="weather-condition-img"
-                id="weatherImg"
-                class="scale-[2]"
-              />
-            </div>
-            <div class="conditon__temp">
-              <span class="text-9xl font-thin" id="temp">66</span>
-              <span class="absolute text-2xl font-medium">.C</span>
-            </div>
-            <!-- <div class="more_info">
-              <div class="wind flex items-center">
-                <img
-                  src="//cdn.weatherapi.com/weather/64x64/day/122.png"
-                  alt="weather-condition-img"
-                />
-                <h6 class="text-xl">34</h6>
-              </div>
-              <div class="wind flex items-center">
-                <img
-                  src="//cdn.weatherapi.com/weather/64x64/day/122.png"
-                  alt="weather-condition-img"
-                />
-                <h6 class="text-xl">34</h6>
-              </div>
-              <div class="wind flex items-center">
-                <img
-                  src="//cdn.weatherapi.com/weather/64x64/day/122.png"
-                  alt="weather-condition-img"
-                />
-                <h6 class="text-xl">34</h6>
-              </div>
-            </div> -->
-          </div>
-          <div class="forecast flex items-center gap-5">
-            <!-- <div class="flex items-center flex-col" id="forecast">
-              <img
-                src="//cdn.weatherapi.com/weather/64x64/day/122.png"
-                alt="weather-condition-img"
-                class="h-3/5 w-3/5"
-                id="forecast_img"
-              />
-              <h6 class="text-xl" id="forecast_temp">34</h6>
-              <h6 class="text-xl" id="forecast_day">Thur</h6>
-            </div>
-            <div class="flex items-center flex-col" id="forecast">
-              <img
-                src="//cdn.weatherapi.com/weather/64x64/day/122.png"
-                alt="weather-condition-img"
-                class="h-3/5 w-3/5"
-                id="forecast_img"
-              />
-              <h6 class="text-xl" id="forecast_temp">34</h6>
-              <h6 class="text-xl" id="forecast_day">Thur</h6>
-            </div>
-            <div class="flex items-center flex-col" id="forecast">
-              <img
-                src="//cdn.weatherapi.com/weather/64x64/day/122.png"
-                alt="weather-condition-img"
-                class="h-3/5 w-3/5"
-                id="forecast_img"
-              />
-              <h6 class="text-xl" id="forecast_temp">34</h6>
-              <h6 class="text-xl" id="forecast_day">Thur</h6>
-            </div>
-            <div class="flex items-center flex-col" id="forecast">
-              <img
-                src="//cdn.weatherapi.com/weather/64x64/day/122.png"
-                alt="weather-condition-img"
-                class="h-3/5 w-3/5"
-                id="forecast_img"
-              />
-              <h6 class="text-xl" id="forecast_temp">34</h6>
-              <h6 class="text-xl" id="forecast_day">Thur</h6>
-            </div>
-            <div class="flex items-center flex-col" id="forecast">
-              <img
-                src="//cdn.weatherapi.com/weather/64x64/day/122.png"
-                alt="weather-condition-img"
-                class="h-3/5 w-3/5"
-                id="forecast_img"
-              />
-              <h6 class="text-xl" id="forecast_temp">34</h6>
-              <h6 class="text-xl" id="forecast_day">Thur</h6>
-            </div> -->
-          </div>
+
+          <div class="wether_condition flex gap-10 items-center"></div>
+          <div class="forecast flex items-center gap-5" id="forecast"></div>
         </div>
       </div>
     </main>
