@@ -6,7 +6,7 @@ const getData = async (event) => {
   event.preventDefault();
   const city = userInput.value ? userInput.value : "New Delhi";
   const fetchData = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=b11a7755c1f247c2995112058231102&q=${city}&days=5&aqi=no&alerts=no`
+    `https://api.weatherapi.com/v1/forecast.json?key=b11a7755c1f247c2995112058231102&q=${city}&days=5&aqi=no&alerts=no`
   );
   if (!data) {
     card.innerHTML = `<div class="loader"></div>`;
