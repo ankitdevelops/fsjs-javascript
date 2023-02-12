@@ -20,10 +20,14 @@
               <input
                 id="userInput"
                 placeholder="Your City..."
+                oninput="activeButton()"
                 class="h-full p-2 focus:outline-none border-b-2 rounded"
                 u
               />
-              <button class="bg-slate-800 text-white py-2 px-4 rounded">
+              <button
+                class="bg-slate-800 text-white py-2 px-4 rounded"
+                id="searchButton"
+              >
                 Search
               </button>
             </form>

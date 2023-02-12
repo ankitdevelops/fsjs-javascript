@@ -1,31 +1,36 @@
 const userInput = document.querySelector("#userInput");
 const forecastContainer = document.querySelector("#forecast");
 const card = document.querySelector(".wether_condition");
+const button = document.querySelector("#searchButton");
+
 const getData = async (event) => {
   let data;
   event.preventDefault();
   const city = userInput.value ? userInput.value : "New Delhi";
   const fetchData = await fetch(
-    `https://api.weatherapi.com/v1/forecast.json?key=b11a7755c1f247c2995112058231102&q=${city}&days=5&aqi=no&alerts=no`
+    `https://api.weatherapi.com/v1/forecast.json?key=b11a7755c1f247c2995112058231102&q=${city}&days=6&aqi=no&alerts=no`
   );
   if (!data) {
     card.innerHTML = `<div class="loader"></div>`;
     forecastContainer.innerHTML = "";
   }
   data = await fetchData.json();
-  console.log(data);
 
+  //
   if (!data.error) {
-    weatherConditon(data.current.temp_c, data.current.condition.icon);
-    data.forecast.forecastday.forEach((forecastData) => {
+    weatherCondition(data.current.temp_c, data.current.condition.icon);
+    let foreCastData = data.forecast.forecastday;
+    foreCastData.shift();
+    foreCastData.forEach((forecastData) => {
       let icon = forecastData.day.condition.icon;
-      let temp = forecastData.day.avgtemp_c;
-      let date = forecastData.date;
+      let temp = Math.ceil(forecastData.day.avgtemp_c);
+      let date = new Date(forecastData.date);
+      let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+      let day = days[date.getDay()];
       userInput.setAttribute("placeholder", data.location.name);
-      forecastElement(icon, temp, date);
+      forecastElement(icon, temp, day);
     });
   } else {
-    // alert(data.error.message);
     card.innerHTML = `
     <div>
         <img
@@ -41,24 +46,25 @@ const getData = async (event) => {
   userInput.value = "";
 };
 
-function forecastElement(icon, temp, date) {
+function forecastElement(icon, temp, day) {
   const element = document.createElement("div");
-  element.classList.add("flex", "items-center", "flex-col");
+  element.classList.add("flex", "items-center", "flex-col", "w-full");
   element.innerHTML = `
     <img
     src=${icon}
     alt="weather-condition-img"
-    class=""
+    class="w-10 h-10"
     id="forecast_img"
     />
     <h6 class="text-xl text-white" id="forecast_temp ">${temp}</h6>
+    <h6 class="text-xl text-white" id="forecast_day font-semibold">${day}</h6>
    
   `;
 
   forecastContainer.appendChild(element);
 }
 
-function weatherConditon(temp, icon) {
+function weatherCondition(temp, icon) {
   card.innerHTML = `
     <div class="condition__img w-1/2">
         <img
@@ -74,4 +80,3 @@ function weatherConditon(temp, icon) {
     </div> 
     `;
 }
-// <h6 class="text-xs" id="forecast_day">${date}</h6>
